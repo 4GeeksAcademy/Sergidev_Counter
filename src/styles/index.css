@@ -1,11 +1,73 @@
-/* 
+.counter-container {
+    gap: 20px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.counter-display {
+    gap: clamp(4px, 0.8vw, 12px);
+    width: fit-content;
+    background-color: #000;
+}
 
-*/
+.counter-digit {
+    width: clamp(45px, 8vw, 90px);
+    height: clamp(65px, 11vw, 130px);
+    font-size: clamp(2rem, 6vw, 5.5rem);
+    font-family: serif;
+    background-color: #111;
+    border-radius: clamp(4px, 1vw, 12px);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.7);
+    user-select: none;
+}
+
+.counter-icon {
+    font-size: clamp(1.5rem, 4.5vw, 4rem);
+}
+
+.control-panel {
+    max-width: 350px;
+}
+
+.countdown-form {
+    min-width: 250px;
+    max-width: 350px;
+}
+
+@keyframes heartBeatBackground {
+    0% {background-color: #120c1f;}
+    14% {background-color: #231236;}
+    28% {background-color: #120c1f;}
+    42% {background-color: #231236;}
+    70% {background-color: #120c1f;}
+    100% {background-color: #120c1f;}
+}
+
+.animated-pulse-bg {
+    width: 100%;
+    animation: heartBeatBackground 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+@keyframes fadeOutEffect {
+    0% {opacity: 1;}
+    30% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+.vecna-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    
+    animation: fadeOutEffect 2s ease-out forwards;
+}
+
+.vecna-image {
+    width: 100%;
+    height: 100%;
+}
